@@ -1,8 +1,8 @@
-function min(array, start, key) {
+function min(fn_callback, array, start) {
   let smaller = start;
 
   for (let current = start; current < array.length; current++) {
-    if (array[current][key] < array[smaller][key]) {
+    if (fn_callback(array[current], array[smaller])) {
       smaller = current;
     }
   }
